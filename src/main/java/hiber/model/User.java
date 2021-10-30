@@ -1,7 +1,5 @@
 package hiber.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 
 
@@ -27,8 +25,13 @@ public class User {
     @PrimaryKeyJoinColumn
     private Car car;
 
+    @Override
+    public String toString() {
+        return "Товарищ " + firstName + " пользуется автомашиной " + car.getModel() + " и кроме того, он крутой чувак с электронной почтой: " + email;
+    }
+
     public User() {
-            }
+    }
 
     public Car getCar() {
         return car;
